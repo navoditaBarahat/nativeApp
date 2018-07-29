@@ -1,0 +1,57 @@
+base class-TestUtil rename to base
+Config class to read config data such as apk path
+ReadData to read data from csv
+ExtentReport with ==== screenshot class
+
+Page class extends base
+BAseTest class with before after test annotations to initialize all core classes
+Test classes 
+
+
+Papa_Mummy1
+
+
+Scenario: Test Input Box
+
+When User Enters <Text> in Input Box
+Then User clears the text from Input box
+
+
+Scenario: Test Check Box
+
+When User uncheck the Check box
+Then User checks the check box
+
+
+Scenario: DisplayPopUpStepDef
+
+Then User Click on Display Pop Up
+
+,@InputBox,@CheckBox,@DisplayPopUp
+
+ZY223V7W5M
+
+
+\"([^\"]*)\"
+
+
+@AndroidFindBy(xpath="//android.widget.Button[@content-desc='buttonTestCD']")
+	public AndroidElement ENButton;
+	
+	@FindBy(xpath="//android.widget.EditText[@content-desc='my_text_fieldCD']")
+	public MobileElement  input;
+	
+	@FindBy(id="android:id/message")
+	public MobileElement  popUpTitle;
+	
+	@FindBy(id="android:id/button2")
+	public MobileElement  btnNO;
+	
+	@FindBy(xpath="//android.widget.LinearLayout[@content-desc='imageViewCD'])[2]/android.widget.CheckBox")
+	public MobileElement  chkBox;
+	
+	@FindBy(xpath="//android.widget.LinearLayout[@content-desc='imageViewCD'])[2]/android.widget.CheckBox")
+	public MobileElement  btnDisplayPopUp;
+	
+	@FindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]")
+	public MobileElement  appTitle;
