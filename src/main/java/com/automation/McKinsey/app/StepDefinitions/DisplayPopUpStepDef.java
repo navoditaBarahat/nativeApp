@@ -1,7 +1,8 @@
-package com.automation.McKinsey.app.pages;
+package com.automation.McKinsey.app.StepDefinitions;
 
 import com.automation.McKinsey.app.Core.Config;
 import com.automation.McKinsey.app.Core.ReadData;
+import com.automation.McKinsey.app.pages.SelendriodPage;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
