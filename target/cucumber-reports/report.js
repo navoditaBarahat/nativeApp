@@ -1,46 +1,57 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/resources/CheckBox.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("src/resources/ENButton.feature");
 formatter.feature({
-  "name": "Selendriod_Check_Box",
+  "name": "Selendriod_EN_Button",
   "description": "As Tester\nI want to Test Selendroid App",
-  "keyword": "Feature",
-  "tags": [
-    {
-      "name": "@CheckBox"
-    }
-  ]
+  "keyword": "Feature"
 });
 formatter.scenario({
-  "name": "Test Check Box",
+  "name": "Test EN button",
   "description": "",
-  "keyword": "Scenario",
-  "tags": [
-    {
-      "name": "@CheckBox"
-    }
-  ]
+  "keyword": "Scenario"
 });
 formatter.before({
   "status": "passed"
 });
 formatter.step({
-  "name": "User uncheck the Check box",
-  "keyword": "When "
+  "name": "User is on the home page",
+  "keyword": "Given "
 });
 formatter.match({
-  "location": "CheckBoxStepDef.Uncheck_CheckBox()"
+  "location": "ENBtnStepDef.User_On_HomePage()"
 });
 formatter.result({
   "status": "passed"
 });
 formatter.step({
-  "name": "User check the check box",
+  "name": "User Clicks on EN button",
+  "keyword": "When "
+});
+formatter.match({
+  "location": "ENBtnStepDef.User_Clicks_On_En_Button()"
+});
+formatter.result({
+  "error_message": "java.lang.NullPointerException\r\n\tat com.automation.McKinsey.app.pages.SelendriodPage.clickENButton(SelendriodPage.java:56)\r\n\tat com.automation.McKinsey.app.StepDefinitions.ENBtnStepDef.User_Clicks_On_En_Button(ENBtnStepDef.java:49)\r\n\tat ✽.User Clicks on EN button(src/resources/ENButton.feature:8)\r\n",
+  "status": "failed"
+});
+formatter.step({
+  "name": "PopUp is Displayed",
   "keyword": "Then "
 });
 formatter.match({
-  "location": "CheckBoxStepDef.Check_The_CheckBox()"
+  "location": "ENBtnStepDef.PopUp_Displayed()"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
+});
+formatter.step({
+  "name": "User clicks on No button",
+  "keyword": "And "
+});
+formatter.match({
+  "location": "ENBtnStepDef.PopUp_Display()"
+});
+formatter.result({
+  "status": "skipped"
 });
 formatter.after({
   "status": "passed"

@@ -16,6 +16,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
 
+import com.automation.McKinsey.app.pages.SelendriodPage;
 import com.cucumber.listener.Reporter;
 
 import io.appium.java_client.MobileElement;
@@ -24,17 +25,15 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
 public class BasePage {
-		
-	public static AndroidDriver<MobileElement> driver = null;
+	
+	public static AndroidDriver<AndroidElement> driver;
 	public Logger logger=Logger.getLogger("BasePage");
-			
-	public BasePage() throws Exception {
-		/*this.driver = driver;
-        PageFactory.initElements(new AppiumFieldDecorator(driver, 10, TimeUnit.SECONDS), this);*/
+		
+	public BasePage() {
 		PropertyConfigurator.configure("log4j.properties");
 		logger.info("BasePage Class initialized");
 		
-	}
+	}	
 			
 	public void launchApp() throws MalformedURLException {
 		DesiredCapabilities caps = new DesiredCapabilities();
@@ -43,7 +42,7 @@ public class BasePage {
 		caps.setCapability("app", System.getProperty("user.dir")+ Config.readConfig("pathToApk"));
 		caps.setCapability("appActivity",Config.readConfig("appActivity"));
 	    caps.setCapability("appPackage",Config.readConfig("appPackage"));
-		driver = new AndroidDriver<MobileElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
+		driver = new AndroidDriver<AndroidElement>(new URL("http://0.0.0.0:4723/wd/hub"), caps);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 	

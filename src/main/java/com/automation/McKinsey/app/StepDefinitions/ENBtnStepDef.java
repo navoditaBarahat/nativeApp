@@ -2,8 +2,6 @@ package com.automation.McKinsey.app.StepDefinitions;
 
 import static org.testng.Assert.assertEquals;
 
-import com.automation.McKinsey.app.Core.Config;
-import com.automation.McKinsey.app.Core.ReadData;
 import com.automation.McKinsey.app.pages.SelendriodPage;
 
 import cucumber.api.java.After;
@@ -14,26 +12,25 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class ENBtnStepDef{
-	//public AndroidDriver<MobileElement> driver = null;		
-	public ENBtnStepDef() throws Exception{
-	super();	
-	}
+	//public AndroidDriver<MobileElement> driver = null;
 	
+	//AndroidDriver<AndroidElement> driver;
 	SelendriodPage page = new SelendriodPage();
-		
+	
+			
 	String assertionError = null;
-
+	
 	@Before
 	public void testSetup() throws Exception {
 		page.launchApp();
 	}
 	
-	/*@After
+	@After
 	public void ExtentReport() {
 		//page.writeExtentReport();
 		//page.driver.removeApp(Config.readConfig("pathToApk"));
 		page.driver.quit();
-		}*/
+		}
 	
 	@Given("^User is on the home page$")
 	public void User_On_HomePage() throws Exception {

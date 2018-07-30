@@ -21,12 +21,34 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.*;
 
-public class SelendriodPage extends BasePage{
+public class SelendriodPage extends BasePage {
 		
-	public SelendriodPage() throws Exception {
-		super();
-	}
+	/*public AndroidDriver<AndroidElement> driver;
+	public SelendriodPage(AndroidDriver<AndroidElement> driver){
+		this.driver=driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver, 10, TimeUnit.SECONDS), this);
+	}*/
 
+	@FindBy(xpath="//android.widget.Button[@content-desc='buttonTestCD']")
+	public AndroidElement ENButton;
+	@FindBy(xpath="//android.widget.EditText[@content-desc='my_text_fieldCD']")
+	public MobileElement  input;
+	
+	@FindBy(id="android:id/message")
+	public MobileElement  popUpTitle;
+	
+	@FindBy(id="android:id/button2")
+	public MobileElement  btnNO;
+	
+	@FindBy(xpath="//android.widget.LinearLayout[@content-desc='imageViewCD'])[2]/android.widget.CheckBox")
+	public MobileElement  chkBox;
+	
+	@FindBy(xpath="//android.widget.LinearLayout[@content-desc='imageViewCD'])[2]/android.widget.CheckBox")
+	public MobileElement  btnDisplayPopUp;
+	
+	@FindBy(xpath="/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]")
+	public MobileElement  appTitle;
+	
 	String title1 = "/hierarchy/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.FrameLayout[2]/android.widget.LinearLayout/android.widget.TextView[1]";
 	String ENBtn = "//android.widget.Button[@content-desc='buttonTestCD']";
 	String inputBox = "//android.widget.EditText[@content-desc='my_text_fieldCD']";
@@ -34,7 +56,7 @@ public class SelendriodPage extends BasePage{
 	String buttnNO = "android:id/button2";
 	String checkBox = "io.selendroid.testapp:id/input_adds_check_box";
 	String displayPopUpBtn = "io.selendroid.testapp:id/showPopupWindowButton";
-	
+		
 	public String[] testData() {
 		String[] data = ReadData.ReadCSV("TestCase1", ",", System.getProperty("user.dir")+Config.readConfig("dataFileName"));
 		return data;
